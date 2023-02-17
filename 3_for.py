@@ -31,19 +31,19 @@ def main():
     total_sold = 0
 
     for item in phones_list:
-      item_sold = 0
-      total_average = 0
+        item_sold = 0
+        total_average = 0
 
-      for sale in  item['items_sold']:
-         item_sold += sale
-      
-      product = item['product']
-      print(f'Всего продано {product} {item_sold} шт. ')
-      item_average = int(item_sold / 12)
-      print(f'Среднее количество продаж {product} {item_average} шт. ')
+        for sale in  item['items_sold']:
+            item_sold += sale
+        
+        product = item['product']
+        print(f'Всего продано {product} {item_sold} шт. ')
+        item_average = int(item_sold / 12)
+        print(f'Среднее количество продаж {product} {item_average} шт. ')
 
-      total_sold += item_sold
-      total_average = int(total_sold / 12)
+        total_sold += item_sold
+        total_average = int(total_sold / 12)
       
     print(f'Суммарное количество продаж всех товаров: {total_sold} шт.')
     print(f'Среднее количество продаж всех товаров: {total_average} шт.')

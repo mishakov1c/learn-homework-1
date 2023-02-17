@@ -16,13 +16,13 @@
 def define_user_activity(users_age):
 
     if users_age < 7:
-      activity = 'Детский сад'
+        activity = 'Детский сад'
     elif 7 <= users_age <= 18:
-      activity = 'Школа'
+        activity = 'Школа'
     elif 18 < users_age <= 22:
-      activity = 'ВУЗ'
+        activity = 'ВУЗ'
     else:
-      activity = 'Работа'
+       activity = 'Работа'
 
     return activity
 
