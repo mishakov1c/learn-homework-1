@@ -31,11 +31,8 @@ def main():
     total_sold = 0
 
     for item in phones_list:
-        item_sold = 0
-        total_average = 0
 
-        for sale in  item['items_sold']:
-            item_sold += sale
+        item_sold = sum(item['items_sold'])
         
         product = item['product']
         print(f'Всего продано {product} {item_sold} шт. ')

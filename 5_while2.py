@@ -23,11 +23,8 @@ def ask_user(answers_dict):
 
     if question in answers_dict:
         answer = answers_dict[question]
-        print(f'Программа: {answer}')
-
-while True:
-    ask_user(questions_and_answers)
-    
+        print(f'Программа: {answer}')    
     
 if __name__ == "__main__":
-    ask_user(questions_and_answers)
+    while True:
+        ask_user(questions_and_answers)
