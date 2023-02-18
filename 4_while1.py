@@ -10,8 +10,7 @@
 """
 
 
-def hello_user():
-    
+def hello_user():    
     answer = ''
 
     while answer != 'Хорошо':

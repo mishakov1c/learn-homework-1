@@ -18,7 +18,6 @@
 questions_and_answers = {"Как тебя зовут?": "Питон", "Сколько тебе лет?": 32, "Как дела?": "Хорошо", "Что делаешь?": "Работаю", "Кто твой папа?": "Гвидо ван Россум"}
 
 def ask_user(answers_dict):
-    
     question = input("Пользователь: ")
 
     if question in answers_dict:

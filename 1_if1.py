@@ -14,7 +14,6 @@
 
 """
 def define_user_activity(users_age):
-
     if users_age < 7:
         activity = 'Детский сад'
     elif 7 <= users_age <= 18:

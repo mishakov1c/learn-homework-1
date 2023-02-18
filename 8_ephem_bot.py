@@ -56,7 +56,6 @@ def get_ephem_planet(planet_name):
 def planet_info(update, context):
     user_text = update.message.text
     print(user_text) 
-    
     splitted_text = user_text.split()
     
     try:
