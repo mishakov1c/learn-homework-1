@@ -10,12 +10,11 @@
 """
 
 
-def hello_user():
-    
-    answer = ''
+def hello_user():    
+    answer = input('Как дела? ')
 
     while answer != 'Хорошо':
-        answer = input('Как дела?')
+        answer = input('Как дела? ')
     
 if __name__ == "__main__":
     hello_user()

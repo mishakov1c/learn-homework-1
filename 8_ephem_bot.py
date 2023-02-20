@@ -36,37 +36,26 @@ def talk_to_me(update, context):
 def get_ephem_planet(planet_name):
     now = datetime.datetime.now()
 
-    if planet_name == 'Mars':
-        ephem_planet = ephem.Mars(now)
-    elif planet_name == 'Mercury':
-         ephem_planet = ephem.Mercury(now)
-    elif planet_name == 'Venus':
-        ephem_planet = ephem.Venus(now)
-    elif planet_name == 'Earth':
-        ephem_planet = ephem.Earth(now)
-    elif planet_name == 'Jupiter':
-        ephem_planet = ephem.Jupiter(now)
-    elif planet_name == 'Uranus':
-        ephem_planet = ephem.Uranus(now)
-    elif planet_name == 'Neptune':
-        ephem_planet = ephem.Neptune(now)
+    planet = getattr(ephem, planet_name)
+    ephem_planet = planet(now)
+
+    print(ephem_planet)
 
     return ephem_planet
 
 def planet_info(update, context):
     user_text = update.message.text
     print(user_text) 
-    
     splitted_text = user_text.split()
     
-    try:
-        planet_name = splitted_text[1]
+    if len(splitted_text) > 1:  
+        planet_name = splitted_text[1].capitalize()
         print(planet_name)
         ephem_planet = get_ephem_planet(planet_name)
         const = ephem.constellation(ephem_planet)
         constellation = const[1]
         update.message.reply_text(f'Планета "{planet_name}" находится в созвездии "{constellation}"')   
-    except IndexError:
+    else:
         error_text = "Имя планеты не введено" 
         print(error_text)
         update.message.reply_text(error_text)
