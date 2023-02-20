@@ -28,19 +28,19 @@ def main():
     ]
     
     total_sold = 0
-    total_sold = 0
 
     for item in phones_list:
 
         item_sold = sum(item['items_sold'])
+        months = len(item['items_sold'])
         
         product = item['product']
         print(f'Всего продано {product} {item_sold} шт. ')
-        item_average = int(item_sold / 12)
+        item_average = int(item_sold / months)
         print(f'Среднее количество продаж {product} {item_average} шт. ')
 
         total_sold += item_sold
-        total_average = int(total_sold / 12)
+        total_average = int(total_sold / months)
       
     print(f'Суммарное количество продаж всех товаров: {total_sold} шт.')
     print(f'Среднее количество продаж всех товаров: {total_average} шт.')

@@ -16,7 +16,7 @@
 """
 
 def analyze_strings(string_1, string_2):
-    if type(string_1) != str or type(string_2) != str:
+    if not (isinstance(string_1, str) and isinstance(string_2, str)):
         result = 0
     elif string_1 == string_2:
         result = 1
